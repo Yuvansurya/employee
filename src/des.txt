@@ -1,0 +1,35 @@
+const db = mysql.createConnection({
+  host: 'bmbdzhtqwcchmqchwzxm-mysql.services.clever-cloud.com',
+  user: 'u5stfz1zutlqrxrl',
+  password: '2OVzQnP3Ovxz0PWjB989',
+  database: 'bmbdzhtqwcchmqchwzxm'
+});
+
+
+
+have a drop down for desigination 
+
+if department is IT is clicked these are the options:
+Software Engineer/Developer
+Systems Administrator
+Network Engineer
+Database Administrator (DBA)
+IT Project Manager
+IT Security Specialist
+Data Analyst
+
+if department is HR is clicked these are the options:
+HR Consultant
+HR Administrator
+HR Manager
+HR Generalist
+HR Director
+
+if department is Finance is clicked these are the options:
+Financial Analyst
+IT Auditor
+Budget Analyst
+IT Procurement Specialist
+Cost Accountant
+IT Financial Manager
+Financial Controller
