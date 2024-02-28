@@ -30,7 +30,7 @@ const App = () => {
 
   const fetchSearchResults = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/search?keyword=${searchKeyword}&page=${currentPage}`);
+      const response = await fetch(`https://employee-server-ewiu.onrender.com/search?keyword=${searchKeyword}&page=${currentPage}`);
       const data = await response.json();
       setSearchResults(data.results);
       setTotalPages(data.totalPages);
@@ -45,7 +45,7 @@ const App = () => {
 
   const fetchEmployees = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/employees?page=${currentPage}`);
+      const response = await fetch(`https://employee-server-ewiu.onrender.com/employees?page=${currentPage}`);
       const data = await response.json();
       setEmployees(data.employees);
       setTotalPages(data.totalPages);
@@ -111,7 +111,7 @@ const App = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3001/submitForm', {
+      const response = await fetch('https://employee-server-ewiu.onrender.com/submitForm', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -138,7 +138,7 @@ const App = () => {
   };
 
   const press = (id) => {
-    axios.post("http://localhost:3001/deletedata", { id: id })
+    axios.post("https://employee-server-ewiu.onrender.com/deletedata", { id: id })
       .then(response => {
         fetchEmployees();
       })
