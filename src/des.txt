@@ -33,3 +33,11 @@ IT Procurement Specialist
 Cost Accountant
 IT Financial Manager
 Financial Controller
+
+
+const db = mysql.createConnection({
+  host: 'bmbdzhtqwcchmqchwzxm-mysql.services.clever-cloud.com',
+  user: 'u5stfz1zutlqrxrl',
+  password: '2OVzQnP3Ovxz0PWjB989',
+  database: 'bmbdzhtqwcchmqchwzxm'
+});

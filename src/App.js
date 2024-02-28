@@ -90,12 +90,32 @@ const App = () => {
         ];
         break;
       default:
+        designationOptions = [
+          'Software Engineer/Developer',
+          'Systems Administrator',
+          'Network Engineer',
+          'Database Administrator (DBA)',
+          'IT Project Manager',
+          'IT Security Specialist',
+          'Data Analyst',
+          'Financial Analyst',
+          'IT Auditor',
+          'Budget Analyst',
+          'IT Procurement Specialist',
+          'Cost Accountant',
+          'IT Financial Manager',
+          'Financial Controller',
+          'HR Consultant',
+          'HR Administrator',
+          'HR Manager',
+          'HR Generalist',
+          'HR Director'
+        ];
         break;
     }
     setFormData(prevState => ({
       ...prevState,
       [name]: value,
-      designation: '', // Reset designation when department changes
       designationOptions: designationOptions
     }));
   };
@@ -149,20 +169,19 @@ const App = () => {
   }
 
   function calculateAge(dateOfBirth) {
-    const today = new Date();
-    const yesterday = new Date(today);
-    yesterday.setDate(yesterday.getDate() - 1);
-
-    const maxDate = new Date(2006, 11, 31);
-
     const birthDate = new Date(dateOfBirth);
-    let age = maxDate.getFullYear() - birthDate.getFullYear();
-    const monthDiff = maxDate.getMonth() - birthDate.getMonth();
-    if (monthDiff < 0 || (monthDiff === 0 && maxDate.getDate() < birthDate.getDate())) {
+    const today = new Date();
+
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
       age--;
     }
+
     return age;
   }
+
 
   const today = new Date();
   today.setFullYear(today.getFullYear() - 18);
@@ -218,7 +237,7 @@ const App = () => {
           </div>
           <div>
             <label htmlFor="salary">Salary:</label>
-            <input type="number" id="salary" name="salary" value={formData.salary} onChange={handleChange} max={99999999} required />
+            <input type="number" id="salary" name="salary" value={formData.salary} onChange={handleChange} min={0} max={99999999} required />
           </div>
           <button type="submit">Submit</button>
         </form>
